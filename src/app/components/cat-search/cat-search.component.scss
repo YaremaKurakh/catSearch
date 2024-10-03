@@ -1,0 +1,27 @@
+.container {
+  padding: 5%;
+  display: flex;
+  gap: 5%;
+
+  .search-results {
+    display: grid;
+    gap: 10px;
+    grid-auto-rows: auto;
+
+    mat-card {
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .search-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

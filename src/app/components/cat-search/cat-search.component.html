@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="search-form" [formGroup]="form" (ngSubmit)="searchCats()">
+    <mat-form-field>
+      <mat-label>Кількість результатів</mat-label>
+      <input matInput type="number" formControlName="limit">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Порода</mat-label>
+      <mat-select formControlName="breed">
+        <mat-option *ngFor="let breed of breeds" [value]="breed.id">{{ breed.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Пошук</button>
+  </form>
+  <div class="search-results">
+    <mat-card *ngFor="let cat of searchResults">
+      <img [src]="cat.url" alt="Cat image" />
+    </mat-card>
+  </div>
+</div>
+
+
+
